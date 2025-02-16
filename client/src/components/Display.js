@@ -51,13 +51,19 @@ const Display = ({ contract, account }) => {
   return (
     <>
       <div className="image-list">{data}</div>
+      <p className="get-sharedfiles">
+        <lable>Get Shared Files Here:</lable>
       <input
         type="text"
         placeholder="Enter Address"
         className="address"
       ></input>
       <button className="center button" onClick={getdata}>
-        Get Data
+        Get Files
+      </button>
+      </p>
+      <button className="center button" onClick={getdata}>
+        View Files
       </button>
     </>
   );
