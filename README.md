@@ -1,86 +1,90 @@
-# Decentralized Image Upload and Sharing
+# Decentralized Secure File Sharing System
 
-This project facilitates decentralized image upload and sharing on the blockchain using Solidity for the smart contract and React for the front-end interface. It enables users to securely upload images to IPFS (InterPlanetary File System) and share access with specified users through smart contract functionality.
+## Overview
+The **Decentralized Secure File Sharing System** is a blockchain-based platform that enables secure and decentralized file storage and sharing. It leverages **Ethereum, Solidity, IPFS (Pinata), and MySQL** to ensure data integrity, security, and accessibility.
 
-Here is the video in English - [Decentralize Google Drive](https://youtu.be/M-KRLlHG_zs?si=rD7I-fH-P8kGiwwf)
-
-Here is the video in Hindi - [Decentralize Google Drive](https://youtu.be/fghqq3-P3x0?si=CVMpHFTW3-fa3R3A)
+## Tech Stack
+- **Frontend:** React.js
+- **Backend:** Node.js, Express.js
+- **Blockchain:** Ethereum, Solidity, Hardhat
+- **Storage:** IPFS (Pinata)
+- **Authentication:** MySQL
+- **Wallet Integration:** MetaMask
 
 ## Features
+✅ **Decentralized File Storage**: Uses IPFS (Pinata) for secure and immutable file storage.  
+✅ **Blockchain Security**: Ensures secure access control with Ethereum smart contracts.  
+✅ **User Authentication**: MySQL-based authentication for users and admins.  
+✅ **File Upload & Access Management**: Users can upload files, set permissions, and share them securely.  
+✅ **MetaMask Integration**: Connects with Ethereum wallets for transactions and authentication.  
 
-- **Decentralized Storage:** Images are uploaded to IPFS, ensuring decentralized and immutable storage.
-- **Smart Contract:** Utilizes Solidity smart contracts on the Ethereum blockchain for access control and ownership management.
-- **Access Control:** Users can grant or revoke access to their uploaded images to specific individuals through the smart contract.
+## Installation & Setup
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [MetaMask](https://metamask.io/)
+- [Hardhat](https://hardhat.org/)
+- [MySQL](https://www.mysql.com/)
 
-## Technologies Used
+### Clone the Repository
+```sh
+git clone https://github.com/shivamani21/decentralized-file-sharing.git
+cd decentralized-file-sharing
+```
 
-- **Solidity:** Smart contract development for ownership and access control.
-- **React:** Front-end interface for uploading images and managing access.
-- **IPFS:** Decentralized storage protocol for hosting uploaded images.
+### Install Dependencies
+```sh
+npm install
+```
+
+### Set Up MySQL Database
+1. Create a database in MySQL.
+2. Update `.env` with your database credentials.
+
+### Deploy Smart Contract (Hardhat)
+```sh
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+### Run the Application
+```sh
+npm start
+```
+
+## Smart Contracts
+- **Upload.sol**: Manages file storage, access control, and sharing permissions.
+- **Deployment using Hardhat**: Contracts are deployed to Ethereum testnets.
+
+## File Storage (IPFS Pinata)
+- Files are uploaded to IPFS via Pinata.
+- The returned hash is stored on the blockchain for verification.
+
+## Authentication System
+- Users and admins are authenticated using **MySQL**.
+- Login system ensures secure access to uploaded files.
 
 ## Usage
+1. **Connect MetaMask** to authenticate users.
+2. **Upload files** securely to IPFS.
+3. **Set permissions** for file access.
+4. **Share files** using blockchain-verified access.
+5. **Admins manage user roles** and file permissions.
 
-### Installation
+## Future Enhancements
+- Implement **Layer 2 scaling (Polygon)** to reduce gas fees.
+- Improve **UI/UX** for better user interaction.
+- Introduce **role-based access control** for more granular file management.
 
-1. Clone the repository:
+## Contributing
+1. Fork the repository.
+2. Create a new branch (`feature-branch`).
+3. Commit changes and push.
+4. Create a pull request (PR).
 
-   ```bash
-   git clone https://github.com/your-username/decentralized-image-upload.git
-   ```
-2. Install dependencies for the hardhat:
+## License
+This project is licensed under the MIT License.
 
-   ```bash
-   # Navigate to the root directory
-   cd Dgdrive3.0
-   # Install hardhat dependencies
-   npm install
-   ```
-3. Compile the smart contract for artifacts:
-
-   ```bash
-   # Compile Smart Contract
-   npx hardhat compile
-   ```
-4. Deploy the Solidity smart contract to an Ethereum testnet or local development environment.
-   ```bash
-   # Deploy Smart Contract
-   npx hardhat run scripts/deploy.js --network <network-name>
-   ```
-5. Install dependencies for the React front end:
-   ```bash
-   # Navigate to the React client directory
-   cd client 
-   # Install React dependencies
-   npm install
-   ```
-6. Run the react application:
-   ```bash
-   # Start React Application
-   npm start
-   ```
-   
-### Configuration
-
-1. Set up environment variables:
-
-   - Obtain API keys for Pinata to interact with IPFS.
-   - Update the React component (FileUpload.js) with your Pinata API keys.
-     
-### Usage
-
-Once the setup and configuration are complete, follow these steps to utilize the decentralized image upload and sharing system:
-
-1. **Install Metamask:**
-   - Ensure Metamask is installed and configured in your browser for Ethereum interactions.
-
-2. **Update Contract Address:**
-   - After smart contract deployment, make sure to update the contract address in `App.js` within the React application.
-
-3. **Upload Image before "Get Data":**
-   - Click "Get Data" only after uploading an image on Pinata. Otherwise, it will throw an error stating "You don't have access".
-
-4. **Accessing Other User Images:**
-   - Use the "Get Data" button to access other users' images. Input the user's address in the designated box, but remember, you can only access their images if they've granted you access through the smart contract. Otherwise, it will throw an error saying "You don't have access".
-
-These steps will ensure smooth navigation and utilization of the system while maintaining access control and avoiding potential errors.
+## Contact
+For queries, reach out at **shivamani21@github**.
 
